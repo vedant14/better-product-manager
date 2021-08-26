@@ -1,0 +1,53 @@
+fragment Question on Question {
+  stage
+  remoteId: id
+  createdAt
+  updatedAt
+  publishedAt
+  questionString
+  answers
+  trivia {
+    ... on RichText {
+      raw
+      html
+      markdown
+      text
+    }
+  }
+  createdBy {
+    ... on User {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
+  updatedBy {
+    ... on User {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
+  publishedBy {
+    ... on User {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
+  test {
+    ... on Test {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
+  gif {
+    ... on Asset {
+      remoteTypeName: __typename
+      remoteId: id
+      locale
+      stage
+    }
+  }
+}
