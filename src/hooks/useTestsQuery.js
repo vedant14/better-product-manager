@@ -1,10 +1,11 @@
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby";
 
 export const useTestsQuery = () => {
 	const data = useStaticQuery(graphql`
 		{
 			allGraphCmsTest {
 				nodes {
+					id
 					title
 					description
 					slug
@@ -19,6 +20,6 @@ export const useTestsQuery = () => {
 				}
 			}
 		}
-	`)
-	return data.allGraphCmsTest.nodes
-}
+	`);
+	return data.allGraphCmsTest.nodes;
+};

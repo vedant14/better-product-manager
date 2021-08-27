@@ -1,5 +1,5 @@
-import styled from "styled-components"
-import { colors } from "../../styles/GlobalStyles"
+import styled from "styled-components";
+import { colors } from "../../styles/GlobalStyles";
 
 export const FooterWrapper = styled.div`
 	background: ${colors.white};
@@ -10,6 +10,11 @@ export const FooterWrapper = styled.div`
 		display: grid;
 		grid-template-columns: 1fr;
 		@media screen and (min-width: 768px) {
+			grid-template-columns: 1fr 1fr;
+			grid-gap: 30px;
+		}
+
+		@media screen and (min-width: 1024px) {
 			grid-template-columns: 1fr 1fr 1fr 1fr;
 		}
 		margin-top: 50px;
@@ -21,7 +26,7 @@ export const FooterWrapper = styled.div`
 
 		> li > a {
 			color: ${colors.washedBlack};
-			border-bottom: 3px solid #f2c94c;
+			border-bottom: 3px solid ${colors.brandYellow};
 		}
 	}
 	.head {
@@ -36,4 +41,11 @@ export const FooterWrapper = styled.div`
 			height: 230px;
 		}
 	}
-`
+`;
+
+export const LogoWrapper = styled.img`
+	width: 200px;
+	@media screen and (min-width: 768px) {
+		margin-top: 10px;
+	}
+`;

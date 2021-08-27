@@ -1,13 +1,14 @@
-import React from "react"
-import { FooterWrapper } from "./styles"
-import { Link } from "gatsby"
+import React from "react";
+import { FooterWrapper, LogoWrapper } from "./styles";
+import { Link } from "gatsby";
+import Logo from "../../images/logo.png";
 
 export function Footer() {
 	return (
 		<FooterWrapper id="Footer">
 			<div className="Container">
 				<div>
-					<h3>My Logo</h3>
+					<LogoWrapper src={Logo} alt="logo" />
 					<p>Initially created to fight my own imposter syndrome. </p>
 				</div>
 				<ul className="footer-link">
@@ -27,14 +28,14 @@ export function Footer() {
 					<iframe
 						className="form"
 						src="https://tally.so/embed/wg5Dlm?hideTitle=1&alignLeft=1&transparentBackground=1"
-						frameborder="0"
-						marginheight="0"
-						marginwidth="0"
+						frameBorder="0"
+						marginHeight="0"
+						marginWidth="0"
 						title="Subcribe"
 					></iframe>
 					<p>Or follow me on twitter for instant updates</p>
 				</div>
 			</div>
 		</FooterWrapper>
-	)
+	);
 }

@@ -1,12 +1,13 @@
-import { createGlobalStyle } from "styled-components"
+import { createGlobalStyle } from "styled-components";
 
 export const colors = {
-  primaryBlack: "#000000",
-  washedBlack: "#4A4A4A",
-  primary: "#2D9CDB",
-  white: "#FFF",
-  backgroundColor: "#FFF2F2",
-}
+  primaryBlack: "#262626",
+  darkGrey: "#6D7D8B",
+  primaryBlue: "#0069FF",
+  lightBlue: "#66A5FF",
+  brandYellow: "#FFE866",
+  white: "#FAFAFA",
+};
 
 export const GlobalStyles = createGlobalStyle`
   :root {
@@ -15,7 +16,10 @@ export const GlobalStyles = createGlobalStyle`
 
 
   body {
-    background-color: ${colors.backgroundColor}; 
+    font-family: 'Inter', sans-serif;
+    background-color: ${colors.white};
+    border: 10px solid ${colors.brandYellow}; 
+    min-height: 100vh;
     margin: 0;
     padding: 0;
   }
@@ -27,65 +31,63 @@ export const GlobalStyles = createGlobalStyle`
   }
 
 
-  h1{
-    font-family: 'Mulish', sans-serif;    
+  h1{    
     font-style: normal;
-    font-weight: 800;
+    font-weight: normal;
     font-size: 32px;
-    line-height: 28px;
-    color: ${colors.primaryBlack};
+    line-height: 32px;
+    letter-spacing: -1px;
     @media screen and (min-width: 768px) {
-      font-size: 48px;
+      font-size: 52px;
+      line-height: 63px;
+    }
+    .bold {
+      font-weight: 700;
+    }
+  }
+
+  h2{    
+    font-style: normal;
+    font-weight: 200;
+    font-size: 28px;
+    line-height: 30px;
+    @media screen and (min-width: 768px) {
+      font-size: 38px;
       line-height: 46px;
     }
   }
 
-  h2{
-    font-family: 'Mulish', sans-serif;    
-    font-style: normal;
-    font-weight: bold;
-    font-size: 28px;
-    line-height: 26px;
-    @media screen and (min-width: 768px) {
-      font-size: 32px;
-      line-height: 40px;
-    }
-  }
-
   h3{
-    font-family: 'Mulish', sans-serif;
     font-style: normal;
-    font-weight: 600;
+    font-weight: normal;
     font-size: 22px;
-    line-height: 24px;
+    line-height: 22px;
     @media screen and (min-width: 768px) {
-      font-size: 24px;
-      line-height: 30px;
+      font-size: 28px;
+      line-height: 34px;
     }
   }
 
   h4{    
-    font-family: 'Mulish', sans-serif;
     font-style: normal;
-    font-weight: 300;
-    font-size: 18px;
-    line-height: 18px;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 20px;
     @media screen and (min-width: 768px) {
-      font-size: 20px;
-      line-height: 20px;
+      font-size: 24px;
+      line-height: 29px;
     }
   }
 
   p, a, li {
-    font-family: 'Mulish', sans-serif;
     color: ${colors.washedBlack};
     font-style: normal;
     font-weight: 300;
     font-size: 16px;
-    line-height: 16px;
+    line-height: 18px;
     @media screen and (min-width: 768px) {
       font-size: 18px;
-      line-height: 22px;
+      line-height: 26px;
     }
   }
 
@@ -94,7 +96,6 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   small{
-    font-family: 'Mulish', sans-serif;
     font-style: normal;
     font-weight: 200;
     font-size: 14px;
@@ -108,27 +109,32 @@ export const GlobalStyles = createGlobalStyle`
   a {
     font-weight: 500;
     text-decoration: none;
-    color: ${colors.primary};
+    color: ${colors.primaryBlack};
     &:hover {
       text-decoration: none; 
     }
   }
 
   button {
+    color: ${colors.primaryBlue};
     background: ${colors.white};
-    border: 1px solid ${colors.primary};
-    cursor: pointer;
-    padding: 10px 14px;
-    color: ${colors.primary};
-    font-family: Inter;
     font-style: normal;
     font-weight: 600;
-    border-radius: 10px;
+    cursor: pointer;
+    padding: 10px 14px;
     margin: 5px 10px 5px 0px;
+    border-radius: .25rem;
+    border: 2px solid ${colors.primaryBlack};
+    box-shadow: 3px 3px 0 ${colors.primaryBlack};
+    transition: all 0.05s ease-in;
     @media screen and (min-width: 768px) {
       font-size: 18px;
-      padding: 10px 20px;
+      padding: 15px 30px;
       margin: 10px 30px 10px 0px;
+    }
+    &:hover{
+      transform: translate(4px, 4px);
+      box-shadow: 1px 1px 0px ${colors.primaryBlack};
     }
   }
   .active {
@@ -140,16 +146,6 @@ export const GlobalStyles = createGlobalStyle`
     margin-top: 200px;
     margin-bottom: 200px;
     text-transform: uppercase;
-  }
-
-  .question {
-    text-align: center;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    @media screen and (min-width: 768px) {
-      margin-top: 100px;
-      margin-bottom: 100px;
-    }
   }
 
   .gif-image{
@@ -180,4 +176,4 @@ export const GlobalStyles = createGlobalStyle`
     }
   }
 
-`
+`;

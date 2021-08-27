@@ -1,35 +1,49 @@
-import React from "react"
-import { graphql } from "gatsby"
-import { Layout, SEO, Hero, AllTests, Footer } from "../components"
+import React, { useState, useEffect, useContext } from "react";
+import { useStaticQuery, graphql } from "gatsby";
+import {
+  Layout,
+  SEO,
+  Hero,
+  FirstTestCard,
+  WhyTests,
+  Footer,
+} from "../components";
+import { Link } from "gatsby";
+import { UserContext } from "../context/UserProvider";
 
-const IndexPage = ({ data }) => {
+const IndexPage = () => {
+  const [user] = useContext(UserContext);
+
+  console.log("user", user);
+  const image = useStaticQuery(graphql`
+    {
+      file(name: { eq: "social-card-twitter" }) {
+        name
+        childrenImageSharp {
+          resize(width: 1200) {
+            src
+            height
+            width
+          }
+        }
+      }
+    }
+  `);
+
   return (
     <Layout>
       <SEO
         title="Product manager tests"
         description="Product manager tests"
-        image={data.file.childrenImageSharp[0].resize}
+        image={image.file.childrenImageSharp[0].resize}
         pathname="home"
       />
       <Hero />
-      <AllTests hide={false} />
+      <FirstTestCard />
+      <WhyTests />
       <Footer />
     </Layout>
-  )
-}
+  );
+};
 
-export const query = graphql`
-  {
-    file(name: { eq: "social-card-twitter" }) {
-      name
-      childrenImageSharp {
-        resize(width: 1200) {
-          src
-          height
-          width
-        }
-      }
-    }
-  }
-`
-export default IndexPage
+export default IndexPage;
