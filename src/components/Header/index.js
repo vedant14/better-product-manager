@@ -13,7 +13,7 @@ export function Header({ page }) {
 	return (
 		<HeaderWrapper menuOpen={menuOpen}>
 			<div className="Container">
-				<Link to="/">
+				<Link to="/" id="logo">
 					<LogoWrapper src={Logo} alt="Logo" />
 				</Link>
 				<MobileMenu

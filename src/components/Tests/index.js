@@ -1,5 +1,5 @@
-import React, { useState } from "react"
-import { Wrapper } from "./styles"
+import React, { useState } from "react";
+import { Wrapper } from "./styles";
 
 export function Tests({
   questionCount,
@@ -10,38 +10,38 @@ export function Tests({
   setScore,
   setShowScore,
 }) {
-  const [showAnswer, setShowAnswer] = useState("")
-  const [selectedAnswer, setSelectedAnswer] = useState(null)
+  const [showAnswer, setShowAnswer] = useState("");
+  const [selectedAnswer, setSelectedAnswer] = useState(null);
   const handleNextQuestion = () => {
-    setSelectedAnswer(null)
+    setSelectedAnswer(null);
     if (currentQuestion + 1 >= questionCount) {
-      setCurrentQuestion(0)
-      setShowScore(true)
+      setCurrentQuestion(0);
+      setShowScore(true);
     } else {
-      setCurrentQuestion(currentQuestion + 1)
+      setCurrentQuestion(currentQuestion + 1);
     }
-  }
+  };
 
-  const handleAnswerSubmit = answer => {
-    setSelectedAnswer(answer.id)
+  const handleAnswerSubmit = (answer) => {
+    setSelectedAnswer(answer.id);
     if (answer.isCorrect === true) {
-      setScore(score + 10)
-      setShowAnswer("correct-answer")
+      setScore(score + 10);
+      setShowAnswer("correct-answer");
     } else {
-      setShowAnswer("incorrect-answer")
+      setShowAnswer("incorrect-answer");
     }
-  }
+  };
   return (
     <Wrapper className="Container">
       <div id="number">
-        <h4>
+        <p>
           Question:
           {currentQuestion + 1}/{questionCount}
-        </h4>
+        </p>
       </div>
-      <div id="question" className="question">
+      <div id="question">
         <h2>{questions[currentQuestion].questionString}</h2>
-        {questions[currentQuestion].answers.map(answer => (
+        {questions[currentQuestion].answers.map((answer) => (
           <button
             disabled={selectedAnswer !== null ? true : false}
             key={answer.id}
@@ -60,11 +60,13 @@ export function Tests({
               }}
             ></div>
             <div>
-              <img
-                src={questions[currentQuestion].gif.url}
-                alt="Trivia"
-                className="gif-image"
-              />
+              {questions[currentQuestion].gif && (
+                <img
+                  src={questions[currentQuestion].gif.url}
+                  alt="Trivia"
+                  className="gif-image"
+                />
+              )}
             </div>
             <div>
               <button
@@ -78,8 +80,8 @@ export function Tests({
         )}
       </div>
       <div id="score">
-        <h4>{score}</h4>
+        <p>Your Score:{score}</p>
       </div>
     </Wrapper>
-  )
+  );
 }

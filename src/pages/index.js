@@ -13,8 +13,6 @@ import { UserContext } from "../context/UserProvider";
 
 const IndexPage = () => {
   const [user] = useContext(UserContext);
-
-  console.log("user", user);
   const image = useStaticQuery(graphql`
     {
       file(name: { eq: "social-card-twitter" }) {
@@ -38,7 +36,10 @@ const IndexPage = () => {
         image={image.file.childrenImageSharp[0].resize}
         pathname="home"
       />
-      <Hero />
+      <Hero
+        text="The most fun way to become"
+        boldText="a better product manager"
+      />
       <FirstTestCard />
       <WhyTests />
       <Footer />

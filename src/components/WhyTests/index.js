@@ -17,16 +17,21 @@ export function WhyTests({ setSelectedRole, setSelectedAnswer }) {
       </h2>
       <h4>What are these tests?</h4>
       <Card id="first">
-        <h4>Fun but thought provoking. kind off.</h4>
+        <h4>Designed to be fun. atleast I tried.</h4>
       </Card>
       <Card id="second">
-        <h4>Fun but thought provoking. kind off.</h4>
+        <h4>
+          We have surveyed 100s of product managers to understand their
+          challenges and created these tests
+        </h4>
       </Card>
       <Card id="third">
-        <h4>Fun but thought provoking. kind off.</h4>
+        <h4>Zero Hype. All experience</h4>
       </Card>
       <Card id="fourth">
-        <h4>Fun but thought provoking. kind off.</h4>
+        <h4>
+          Take a sneak peak into product management before taking the jump
+        </h4>
       </Card>
     </Wrapper>
   );

@@ -2,7 +2,7 @@ import { createGlobalStyle } from "styled-components";
 
 export const colors = {
   primaryBlack: "#262626",
-  darkGrey: "#6D7D8B",
+  darkGrey: "#BBC8D4",
   primaryBlue: "#0069FF",
   lightBlue: "#66A5FF",
   brandYellow: "#FFE866",
@@ -136,11 +136,23 @@ export const GlobalStyles = createGlobalStyle`
       transform: translate(4px, 4px);
       box-shadow: 1px 1px 0px ${colors.primaryBlack};
     }
+    &:disabled{  
+      background: ${colors.darkGrey};
+      transform: translate(4px, 4px);
+      box-shadow: 0px 0px 0px ${colors.primaryBlack}; 
+    }
   }
+  .selected {
+    background: ${colors.primaryBlue} !important;
+    color: ${colors.white} !important;
+  }
+
   .active {
     background: ${colors.primary};
     color: ${colors.white};
   }
+
+  
   .warning {
     color: red;
     margin-top: 200px;

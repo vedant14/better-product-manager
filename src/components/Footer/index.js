@@ -17,7 +17,7 @@ export function Footer() {
 						<Link to="/">Home</Link>
 					</li>
 					<li>
-						<Link to="/start-here">New? Start here</Link>
+						<Link to="/first-test">New? Start here</Link>
 					</li>
 				</ul>
 				<ul className="footer-link">

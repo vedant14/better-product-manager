@@ -13,6 +13,9 @@ export const HeaderWrapper = styled.header`
     padding-top: 4px;
     margin-top: auto;
     margin-bottom: auto;
+    > a#logo {
+      display: flex;
+    }
   }
 `;
 

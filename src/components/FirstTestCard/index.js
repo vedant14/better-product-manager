@@ -19,7 +19,9 @@ export function FirstTestCard({ setSelectedRole, setSelectedAnswer }) {
           We’ve prepared a short quiz to test if you have the necessary
           qualities to become a product manager
         </h3>
-        <button>Take the test</button>
+        <Link to="/first-test">
+          <button>Take the test</button>
+        </Link>
       </div>
     </Wrapper>
   );

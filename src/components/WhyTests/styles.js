@@ -8,6 +8,7 @@ export const Wrapper = styled.div`
   color: ${colors.primaryBlack};
   > h4 {
     margin-top: 40px;
+    margin-bottom: 60px;
   }
   @media screen and (min-width: 768px) {
     margin-top: 200px;
@@ -20,19 +21,52 @@ export const Wrapper = styled.div`
 
 export const Card = styled.div`
   background: ${colors.brandYellow};
-  padding: 80px 20px;
+  position: relative;
   border-radius: 8px;
-  width: 250px;
+  display: flex;
+  height: 200px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 20px auto;
+
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
   > h4 {
     font-weight: 300;
-    line-height: 22px;
+    margin: auto;
   }
-  position: relative;
-  margin: 20px auto;
   @media screen and (min-width: 768px) {
     position: absolute;
-
+    height: 250px;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 220px;
+    &#first {
+      top: 30%;
+      left: 5%;
+      transform: rotate(-3deg);
+    }
+    &#second {
+      top: 35%;
+      right: 1%;
+      transform: rotate(2deg);
+    }
+    &#third {
+      top: 70%;
+      left: 1%;
+      transform: rotate(1deg);
+    }
+    &#fourth {
+      top: 75%;
+      right: 2%;
+      transform: rotate(-2deg);
+    }
+  }
+  @media screen and (min-width: 1024px) {
+    height: 300px;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin: 20px auto;
+    width: 250px;
     &#first {
       top: 30%;
       left: 5%;
