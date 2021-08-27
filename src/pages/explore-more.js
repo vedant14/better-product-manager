@@ -2,10 +2,10 @@ import React, { useState, useEffect, useContext } from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import { Layout, SEO, Hero, AllTests, WhyTests, Footer } from "../components";
 import { Link } from "gatsby";
-import { UserContext } from "../context/UserProvider";
+// import { UserContext } from "../context/UserProvider";
 
 const ExplorePage = () => {
-	const [user] = useContext(UserContext);
+	// const [user] = useContext(UserContext);
 	const image = useStaticQuery(graphql`
 		{
 			file(name: { eq: "social-card-twitter" }) {

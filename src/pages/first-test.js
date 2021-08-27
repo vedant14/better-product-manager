@@ -9,10 +9,10 @@ import {
 	Footer,
 } from "../components";
 import { Link } from "gatsby";
-import { UserContext } from "../context/UserProvider";
+// import { UserContext } from "../context/UserProvider";
 
 const FirstTestPage = () => {
-	const [user] = useContext(UserContext);
+	// const [user] = useContext(UserContext);
 	const image = useStaticQuery(graphql`
 		{
 			file(name: { eq: "social-card-twitter" }) {
